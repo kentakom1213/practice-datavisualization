@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Matplotlib（基礎編） &#8212; Pythonによるデータ可視化入門</title>
+    <title>Matplotlib（基礎編） &#8212; データ可視化入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -92,9 +92,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Pythonによるデータ可視化入門</h1>
+      <img src="_static/line-chart-line.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">データ可視化入門</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -122,7 +127,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html">
+  <a class="reference internal" href="matplotlib_epotential.html">
+   電場をプロット
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualizers.html">
    Pythonの可視化ライブラリまとめ
   </a>
  </li>
@@ -511,7 +521,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10fb2be20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x12002fe20&gt;
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_7_1.png" src="_images/matplotlib_basic_7_1.png" />
@@ -532,7 +542,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10fc6aaa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12016a8c0&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_9_1.png" src="_images/matplotlib_basic_9_1.png" />
@@ -566,7 +576,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.561, 3.413, 3.489, 3.461, 3.563, 3.451, 3.465, 3.464, 3.468, 3.499]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.477, 3.469, 3.482, 3.519, 3.49, 3.502, 3.51, 3.431, 3.589, 3.52]
 </pre></div>
 </div>
 </div>
@@ -582,9 +592,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  1.,  30., 110., 229., 305., 197., 101.,  23.,   3.,   1.]),
- array([3.317, 3.358, 3.399, 3.44 , 3.481, 3.522, 3.563, 3.604, 3.645,
-        3.686, 3.727]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  1.,  13.,  32., 100., 227., 252., 211., 108.,  43.,  13.]),
+ array([3.307, 3.342, 3.377, 3.412, 3.447, 3.482, 3.517, 3.552, 3.587,
+        3.622, 3.657]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -601,27 +611,27 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.,  0.,  3.,
-         4.,  3.,  3.,  1.,  2.,  3., 10.,  7.,  4.,  7., 12., 12.,  5.,
-        14., 22., 14., 13., 22., 19., 19., 19., 17., 34., 22., 28., 24.,
-        25., 41., 26., 27., 33., 31., 38., 32., 22., 24., 31., 19., 31.,
-        25., 33., 18., 22., 14., 13.,  7., 15., 26.,  9., 19.,  9.,  5.,
-        10.,  6.,  8.,  4.,  5.,  2.,  4.,  3.,  4.,  2.,  0.,  1.,  3.,
-         3.,  1.,  1.,  0.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,
-         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.]),
- array([3.317 , 3.3211, 3.3252, 3.3293, 3.3334, 3.3375, 3.3416, 3.3457,
-        3.3498, 3.3539, 3.358 , 3.3621, 3.3662, 3.3703, 3.3744, 3.3785,
-        3.3826, 3.3867, 3.3908, 3.3949, 3.399 , 3.4031, 3.4072, 3.4113,
-        3.4154, 3.4195, 3.4236, 3.4277, 3.4318, 3.4359, 3.44  , 3.4441,
-        3.4482, 3.4523, 3.4564, 3.4605, 3.4646, 3.4687, 3.4728, 3.4769,
-        3.481 , 3.4851, 3.4892, 3.4933, 3.4974, 3.5015, 3.5056, 3.5097,
-        3.5138, 3.5179, 3.522 , 3.5261, 3.5302, 3.5343, 3.5384, 3.5425,
-        3.5466, 3.5507, 3.5548, 3.5589, 3.563 , 3.5671, 3.5712, 3.5753,
-        3.5794, 3.5835, 3.5876, 3.5917, 3.5958, 3.5999, 3.604 , 3.6081,
-        3.6122, 3.6163, 3.6204, 3.6245, 3.6286, 3.6327, 3.6368, 3.6409,
-        3.645 , 3.6491, 3.6532, 3.6573, 3.6614, 3.6655, 3.6696, 3.6737,
-        3.6778, 3.6819, 3.686 , 3.6901, 3.6942, 3.6983, 3.7024, 3.7065,
-        3.7106, 3.7147, 3.7188, 3.7229, 3.727 ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.,  1.,  0.,
+         0.,  0.,  0.,  4.,  2.,  3.,  2.,  1.,  3.,  1.,  2.,  4.,  5.,
+         4.,  4.,  3.,  5.,  8.,  4.,  8.,  8.,  4.,  7., 21.,  8., 20.,
+        12., 27., 15., 20., 17., 26., 23., 30., 16., 32., 21., 24., 20.,
+        26., 23., 32., 23., 34., 20., 26., 24., 36., 17., 29., 16., 19.,
+        20., 22., 13., 18., 21., 10.,  9., 17., 13., 12.,  8., 12.,  7.,
+        12.,  8.,  8.,  4.,  3.,  5.,  6.,  6.,  1.,  2.,  4.,  4.,  3.,
+         0.,  3.,  1.,  0.,  1.,  1.,  1.,  1.,  2.]),
+ array([3.307 , 3.3105, 3.314 , 3.3175, 3.321 , 3.3245, 3.328 , 3.3315,
+        3.335 , 3.3385, 3.342 , 3.3455, 3.349 , 3.3525, 3.356 , 3.3595,
+        3.363 , 3.3665, 3.37  , 3.3735, 3.377 , 3.3805, 3.384 , 3.3875,
+        3.391 , 3.3945, 3.398 , 3.4015, 3.405 , 3.4085, 3.412 , 3.4155,
+        3.419 , 3.4225, 3.426 , 3.4295, 3.433 , 3.4365, 3.44  , 3.4435,
+        3.447 , 3.4505, 3.454 , 3.4575, 3.461 , 3.4645, 3.468 , 3.4715,
+        3.475 , 3.4785, 3.482 , 3.4855, 3.489 , 3.4925, 3.496 , 3.4995,
+        3.503 , 3.5065, 3.51  , 3.5135, 3.517 , 3.5205, 3.524 , 3.5275,
+        3.531 , 3.5345, 3.538 , 3.5415, 3.545 , 3.5485, 3.552 , 3.5555,
+        3.559 , 3.5625, 3.566 , 3.5695, 3.573 , 3.5765, 3.58  , 3.5835,
+        3.587 , 3.5905, 3.594 , 3.5975, 3.601 , 3.6045, 3.608 , 3.6115,
+        3.615 , 3.6185, 3.622 , 3.6255, 3.629 , 3.6325, 3.636 , 3.6395,
+        3.643 , 3.6465, 3.65  , 3.6535, 3.657 ]),
  &lt;BarContainer object of 100 artists&gt;)
 </pre></div>
 </div>
