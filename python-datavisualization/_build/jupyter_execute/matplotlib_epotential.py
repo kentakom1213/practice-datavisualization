@@ -2,6 +2,10 @@
 # coding: utf-8
 
 # # 電場をプロット
+# 
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+# 
+# おまけです。こんなこともできるよーって感じ。
 
 # In[1]:
 

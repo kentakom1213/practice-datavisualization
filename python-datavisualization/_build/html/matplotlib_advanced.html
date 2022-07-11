@@ -325,9 +325,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id3">
    散布図のプロット
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     箱ひげ図のプロット
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    参考
   </a>
  </li>
@@ -364,9 +371,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id3">
    散布図のプロット
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     箱ひげ図のプロット
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
    参考
   </a>
  </li>
@@ -537,9 +551,18 @@ title="Print to PDF"
 <section id="id3">
 <h2>散布図のプロット<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>左側の図（<code class="docutils literal notranslate"><span class="pre">ax1</span></code>）に散布図をプロットしてみます。</p>
+<p><strong>データ</strong></p>
+<ul class="simple">
+<li><p>横軸：所得の中央値</p></li>
+<li><p>縦軸：家賃の中央値</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_income&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_income&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Income and HouseValue&quot;</span><span class="p">)</span>  <span class="c1"># 散布図のタイトル</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;median income&quot;</span><span class="p">)</span>         <span class="c1"># x軸のラベル</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;median house value&quot;</span><span class="p">)</span>    <span class="c1"># y軸のラベル</span>
 
 <span class="n">fig</span>
 </pre></div>
@@ -549,9 +572,32 @@ title="Print to PDF"
 <img alt="_images/matplotlib_advanced_9_0.png" src="_images/matplotlib_advanced_9_0.png" />
 </div>
 </div>
-</section>
 <section id="id4">
-<h2>参考<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h3>箱ひげ図のプロット<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>右側の図（<code class="docutils literal notranslate"><span class="pre">ax2</span></code>）に箱ひげ図をプロットしてみます。</p>
+<p><strong>データ</strong></p>
+<ul class="simple">
+<li><p>家賃の中央値</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">])</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;House Value&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_advanced_11_0.png" src="_images/matplotlib_advanced_11_0.png" />
+</div>
+</div>
+<p>割といい感じの図ができたんじゃないでしょうか？？</p>
+</section>
+</section>
+<section id="id5">
+<h2>参考<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9">早く知っておきたかったmatplotlibの基礎知識、あるいは見た目の調整が捗るArtistの話 - Qiita</a></p></li>
 <li><p><a class="reference external" href="https://bicycle1885.hatenablog.com/entry/2014/02/14/023734">matplotlib入門 - りんごがでている</a></p></li>

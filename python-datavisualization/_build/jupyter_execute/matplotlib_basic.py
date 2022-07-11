@@ -3,7 +3,7 @@
 
 # # Matplotlib（基礎編）
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/kentakom1213/blob/main/matplotlib_basic.ipynb)
 # 
 # まずは、[Chainerチュートリアル](https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html)通りプロット。
 # 簡単なグラフはこれで十分です。
@@ -147,6 +147,60 @@ plt.hist(data, bins=100)
 # 
 # [中心極限定理 - 統計WEB](https://bellcurve.jp/statistics/course/8543.html)
 # ```
+
+# ## 箱ひげ図
+# 
+# **データの生成**
+# 
+# 確率90%、60%、30%で表が出るコインを用意して、何回連続で表が出るかを調べます。  
+# それぞれ1000回ずつ試行します。
+
+# In[9]:
+
+
+from random import randint
+
+
+# In[10]:
+
+
+prob_90 = []
+prob_60 = []
+prob_30 = []
+
+for i in range(1000):
+
+    # 90%が何回連続で出るか
+    count_90 = 0
+    while randint(1, 100) <= 90:
+        count_90 += 1
+    prob_90.append(count_90)
+
+    # 60%が何回連続で出るか
+    count_60 = 0
+    while randint(1, 100) <= 60:
+        count_60 += 1
+    prob_60.append(count_60)
+
+    # 30%が何回連続で出るか
+    count_30 = 0
+    while randint(1, 100) <= 30:
+        count_30 += 1
+    prob_30.append(count_30)
+
+print("90%: ", prob_90[:20])
+print("60%: ", prob_60[:20])
+print("30%: ", prob_30[:20])
+
+
+# In[11]:
+
+
+plt.boxplot((prob_90, prob_60, prob_30))
+
+
+# 90%だと70回以上出ることもあるのに対して、
+# 30%だと10回以上連続で出ることはほとんどないですね。
 
 # ## 参考
 # - [Chainerチュートリアル](https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html)
