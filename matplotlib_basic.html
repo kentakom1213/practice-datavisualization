@@ -371,6 +371,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
+   箱ひげ図
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    参考
   </a>
  </li>
@@ -422,6 +427,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
+   箱ひげ図
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    参考
   </a>
  </li>
@@ -521,7 +531,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x12002fe20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11c82fe20&gt;
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_7_1.png" src="_images/matplotlib_basic_7_1.png" />
@@ -542,7 +552,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12016a8c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c972b30&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_9_1.png" src="_images/matplotlib_basic_9_1.png" />
@@ -576,7 +586,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.477, 3.469, 3.482, 3.519, 3.49, 3.502, 3.51, 3.431, 3.589, 3.52]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.496, 3.621, 3.496, 3.447, 3.494, 3.474, 3.498, 3.353, 3.472, 3.407]
 </pre></div>
 </div>
 </div>
@@ -592,9 +602,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  1.,  13.,  32., 100., 227., 252., 211., 108.,  43.,  13.]),
- array([3.307, 3.342, 3.377, 3.412, 3.447, 3.482, 3.517, 3.552, 3.587,
-        3.622, 3.657]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  9.,  56., 115., 187., 260., 223., 101.,  39.,   9.,   1.]),
+ array([3.341 , 3.3765, 3.412 , 3.4475, 3.483 , 3.5185, 3.554 , 3.5895,
+        3.625 , 3.6605, 3.696 ]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -611,27 +621,29 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.,  1.,  0.,
-         0.,  0.,  0.,  4.,  2.,  3.,  2.,  1.,  3.,  1.,  2.,  4.,  5.,
-         4.,  4.,  3.,  5.,  8.,  4.,  8.,  8.,  4.,  7., 21.,  8., 20.,
-        12., 27., 15., 20., 17., 26., 23., 30., 16., 32., 21., 24., 20.,
-        26., 23., 32., 23., 34., 20., 26., 24., 36., 17., 29., 16., 19.,
-        20., 22., 13., 18., 21., 10.,  9., 17., 13., 12.,  8., 12.,  7.,
-        12.,  8.,  8.,  4.,  3.,  5.,  6.,  6.,  1.,  2.,  4.,  4.,  3.,
-         0.,  3.,  1.,  0.,  1.,  1.,  1.,  1.,  2.]),
- array([3.307 , 3.3105, 3.314 , 3.3175, 3.321 , 3.3245, 3.328 , 3.3315,
-        3.335 , 3.3385, 3.342 , 3.3455, 3.349 , 3.3525, 3.356 , 3.3595,
-        3.363 , 3.3665, 3.37  , 3.3735, 3.377 , 3.3805, 3.384 , 3.3875,
-        3.391 , 3.3945, 3.398 , 3.4015, 3.405 , 3.4085, 3.412 , 3.4155,
-        3.419 , 3.4225, 3.426 , 3.4295, 3.433 , 3.4365, 3.44  , 3.4435,
-        3.447 , 3.4505, 3.454 , 3.4575, 3.461 , 3.4645, 3.468 , 3.4715,
-        3.475 , 3.4785, 3.482 , 3.4855, 3.489 , 3.4925, 3.496 , 3.4995,
-        3.503 , 3.5065, 3.51  , 3.5135, 3.517 , 3.5205, 3.524 , 3.5275,
-        3.531 , 3.5345, 3.538 , 3.5415, 3.545 , 3.5485, 3.552 , 3.5555,
-        3.559 , 3.5625, 3.566 , 3.5695, 3.573 , 3.5765, 3.58  , 3.5835,
-        3.587 , 3.5905, 3.594 , 3.5975, 3.601 , 3.6045, 3.608 , 3.6115,
-        3.615 , 3.6185, 3.622 , 3.6255, 3.629 , 3.6325, 3.636 , 3.6395,
-        3.643 , 3.6465, 3.65  , 3.6535, 3.657 ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  1.,  2.,  2.,  2.,  1.,  0.,  0.,  0.,  2.,  3.,  3.,
+         3.,  7.,  5., 11.,  7., 10.,  5., 10., 10.,  6., 15.,  5., 15.,
+         6., 14., 13., 21., 24., 13., 12., 10., 23., 24., 23., 21., 22.,
+        15., 34., 35., 22., 26., 19., 31., 19., 28., 24., 22., 31., 26.,
+        26., 22., 21., 23., 20., 15., 20., 19.,  9., 18., 12., 12., 11.,
+        15.,  8.,  7.,  4.,  5.,  9.,  1.,  6.,  7.,  4.,  3.,  6.,  1.,
+         2.,  0.,  4.,  2.,  1.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.]),
+ array([3.341  , 3.34455, 3.3481 , 3.35165, 3.3552 , 3.35875, 3.3623 ,
+        3.36585, 3.3694 , 3.37295, 3.3765 , 3.38005, 3.3836 , 3.38715,
+        3.3907 , 3.39425, 3.3978 , 3.40135, 3.4049 , 3.40845, 3.412  ,
+        3.41555, 3.4191 , 3.42265, 3.4262 , 3.42975, 3.4333 , 3.43685,
+        3.4404 , 3.44395, 3.4475 , 3.45105, 3.4546 , 3.45815, 3.4617 ,
+        3.46525, 3.4688 , 3.47235, 3.4759 , 3.47945, 3.483  , 3.48655,
+        3.4901 , 3.49365, 3.4972 , 3.50075, 3.5043 , 3.50785, 3.5114 ,
+        3.51495, 3.5185 , 3.52205, 3.5256 , 3.52915, 3.5327 , 3.53625,
+        3.5398 , 3.54335, 3.5469 , 3.55045, 3.554  , 3.55755, 3.5611 ,
+        3.56465, 3.5682 , 3.57175, 3.5753 , 3.57885, 3.5824 , 3.58595,
+        3.5895 , 3.59305, 3.5966 , 3.60015, 3.6037 , 3.60725, 3.6108 ,
+        3.61435, 3.6179 , 3.62145, 3.625  , 3.62855, 3.6321 , 3.63565,
+        3.6392 , 3.64275, 3.6463 , 3.64985, 3.6534 , 3.65695, 3.6605 ,
+        3.66405, 3.6676 , 3.67115, 3.6747 , 3.67825, 3.6818 , 3.68535,
+        3.6889 , 3.69245, 3.696  ]),
  &lt;BarContainer object of 100 artists&gt;)
 </pre></div>
 </div>
@@ -646,7 +658,96 @@ title="Print to PDF"
 </section>
 </section>
 <section id="id5">
-<h2>参考<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>箱ひげ図<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p><strong>データの生成</strong></p>
+<p>確率90%、60%、30%で表が出るコインを用意して、何回連続で表が出るかを調べます。<br />
+それぞれ1000回ずつ試行します。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob_90</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prob_60</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prob_30</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="c1"># 90%が何回連続で出るか</span>
+    <span class="n">count_90</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span><span class="p">:</span>
+        <span class="n">count_90</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">prob_90</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count_90</span><span class="p">)</span>
+
+    <span class="c1"># 60%が何回連続で出るか</span>
+    <span class="n">count_60</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="n">count_60</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">prob_60</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count_60</span><span class="p">)</span>
+
+    <span class="c1"># 30%が何回連続で出るか</span>
+    <span class="n">count_30</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="n">count_30</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">prob_30</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count_30</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;90%: &quot;</span><span class="p">,</span> <span class="n">prob_90</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;60%: &quot;</span><span class="p">,</span> <span class="n">prob_60</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;30%: &quot;</span><span class="p">,</span> <span class="n">prob_30</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90%:  [2, 5, 5, 2, 26, 3, 9, 4, 6, 18, 3, 4, 0, 0, 20, 6, 1, 0, 14, 11]
+60%:  [1, 4, 2, 0, 5, 0, 0, 4, 1, 0, 6, 3, 6, 0, 14, 3, 7, 4, 0, 5]
+30%:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 0, 1, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">((</span><span class="n">prob_90</span><span class="p">,</span> <span class="n">prob_60</span><span class="p">,</span> <span class="n">prob_30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x11cbbc760&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbca30&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbdb10&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbdde0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbeec0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbf190&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x11cbbcd00&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbcfd0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbe0b0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbe380&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbf460&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbf730&gt;],
+ &#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x11cb9c6d0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbd840&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbebf0&gt;],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x11cbbd2a0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbe650&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbfa00&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x11cbbd570&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbe920&gt;,
+  &lt;matplotlib.lines.Line2D at 0x11cbbfcd0&gt;],
+ &#39;means&#39;: []}
+</pre></div>
+</div>
+<img alt="_images/matplotlib_basic_20_1.png" src="_images/matplotlib_basic_20_1.png" />
+</div>
+</div>
+<p>90%だと70回以上出ることもあるのに対して、
+30%だと10回以上連続で出ることはほとんどないですね。</p>
+</section>
+<section id="id6">
+<h2>参考<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html">Chainerチュートリアル</a></p></li>
 </ul>
