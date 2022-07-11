@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Matplotlibを使ったプロット &#8212; Pythonによるデータ可視化入門</title>
+    <title>Matplotlib（基礎編） &#8212; Pythonによるデータ可視化入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pythonの可視化ライブラリまとめ" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html" />
+    <link rel="next" title="Matplotlib（応用編）" href="matplotlib_advanced.html" />
     <link rel="prev" title="第11回 - Pythonによるデータ可視化入門" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -113,7 +113,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Matplotlibを使ったプロット
+   Matplotlib（基礎編）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib_advanced.html">
+   Matplotlib（応用編）
   </a>
  </li>
  <li class="toctree-l1">
@@ -180,7 +185,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/use_matplotlib.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/matplotlib_basic.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -240,7 +245,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fuse_matplotlib.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmatplotlib_basic.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -268,7 +273,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/use_matplotlib.ipynb"
+        <a href="_sources/matplotlib_basic.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -331,50 +336,33 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#numpy">
    numpyの使い方
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     一定区間に等間隔で散らばった点を生成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     関数にわたす
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id1">
    散布図
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id2">
    折れ線グラフ
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id3">
    ヒストグラム
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     データの生成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     ヒストグラムを作成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id4">
      パラメータの調整
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   参考
+  </a>
  </li>
 </ul>
 
@@ -385,7 +373,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Matplotlibを使ったプロット</h1>
+                <h1>Matplotlib（基礎編）</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -399,50 +387,33 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#numpy">
    numpyの使い方
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     一定区間に等間隔で散らばった点を生成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     関数にわたす
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id1">
    散布図
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id2">
    折れ線グラフ
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id3">
    ヒストグラム
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     データの生成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     ヒストグラムを作成
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id4">
      パラメータの調整
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   参考
+  </a>
  </li>
 </ul>
 
@@ -455,7 +426,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
-<h1>Matplotlibを使ったプロット<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
+<h1>Matplotlib（基礎編）<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
 <p><span class="xref myst"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></span></p>
 <p>まずは、<a class="reference external" href="https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html">Chainerチュートリアル</a>通りプロット。
 簡単なグラフはこれで十分です。</p>
@@ -470,8 +441,7 @@ title="Print to PDF"
 </div>
 <section id="numpy">
 <h2>numpyの使い方<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
-<section id="id1">
-<h3>一定区間に等間隔で散らばった点を生成<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><strong>一定区間に等間隔で散らばった点を生成</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">np.arange(開始,</span> <span class="pre">終了,</span> <span class="pre">間隔)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,9 +461,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="id2">
-<h3>関数にわたす<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p><strong>関数にわたす</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">np.array</span></code>を関数に渡すと、その要素全てに同じ操作が加えられます。</p>
 <p>例）</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
@@ -529,9 +497,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-</section>
-<section id="id3">
-<h2>散布図<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h2>散布図<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.scatter(xの配列,</span> <span class="pre">yの配列)</span></code></p>
 <p>平面状に点を打ちます。</p>
 <div class="cell docutils container">
@@ -544,15 +511,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11962be20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10fb2be20&gt;
 </pre></div>
 </div>
-<img alt="_images/use_matplotlib_7_1.png" src="_images/use_matplotlib_7_1.png" />
+<img alt="_images/matplotlib_basic_7_1.png" src="_images/matplotlib_basic_7_1.png" />
 </div>
 </div>
 </section>
-<section id="id4">
-<h2>折れ線グラフ<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>折れ線グラフ<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.plot(xの配列,</span> <span class="pre">yの配列)</span></code></p>
 <p>散布図と異なり、隣り合った点をつなげます。</p>
 <div class="cell docutils container">
@@ -565,19 +532,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119772320&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10fc6aaa0&gt;]
 </pre></div>
 </div>
-<img alt="_images/use_matplotlib_9_1.png" src="_images/use_matplotlib_9_1.png" />
+<img alt="_images/matplotlib_basic_9_1.png" src="_images/matplotlib_basic_9_1.png" />
 </div>
 </div>
 </section>
-<section id="id5">
-<h2>ヒストグラム<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<section id="id6">
-<h3>データの生成<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(1〜6\)</span> までの数字をランダムに <span class="math notranslate nohighlight">\(1000\)</span> 回選んで平均を求めます。</p>
-<p>これを <span class="math notranslate nohighlight">\(1000\)</span> 回繰り返して、どんな分布になっているかをみてみます。</p>
+<section id="id3">
+<h2>ヒストグラム<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p><strong>データの生成</strong></p>
+<p><span class="math notranslate nohighlight">\(1〜6\)</span> までの数字をランダムに <span class="math notranslate nohighlight">\(1000\)</span> 回選んで平均を求めます。<br />
+これを <span class="math notranslate nohighlight">\(1000\)</span> 回繰り返して、どんな分布になっているかをみてみます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -586,12 +552,12 @@ title="Print to PDF"
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
 
-    <span class="c1"># 1~6までの数字をランダムに選んで足す x 100回</span>
+    <span class="c1"># 1~6までの数字をランダムに選んで足す x 1000回</span>
     <span class="n">sum_of_dice</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
         <span class="n">sum_of_dice</span> <span class="o">+=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
     
-    <span class="n">ave_of_dice</span> <span class="o">=</span> <span class="n">sum_of_dice</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">ave_of_dice</span> <span class="o">=</span> <span class="n">sum_of_dice</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># 1000で割って平均を出す</span>
     <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ave_of_dice</span><span class="p">)</span>
 
 
@@ -600,15 +566,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.456, 3.58, 3.499, 3.523, 3.476, 3.517, 3.494, 3.462, 3.474, 3.591]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.561, 3.413, 3.489, 3.461, 3.563, 3.451, 3.465, 3.464, 3.468, 3.499]
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="id7">
-<h3>ヒストグラムを作成<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>自動的に階級の幅を決めてプロットしてくれるみたいです。
+<p><strong>ヒストグラムを作成</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">plt.hist(データ)</span></code></p>
+<p>自動的に階級の幅を決めてプロットしてくれます。
 この場合は <span class="math notranslate nohighlight">\(10\)</span> 個の階級に分けられていました。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,19 +582,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  9.,  34.,  98., 221., 284., 227.,  95.,  26.,   4.,   2.]),
- array([3.331 , 3.3695, 3.408 , 3.4465, 3.485 , 3.5235, 3.562 , 3.6005,
-        3.639 , 3.6775, 3.716 ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  1.,  30., 110., 229., 305., 197., 101.,  23.,   3.,   1.]),
+ array([3.317, 3.358, 3.399, 3.44 , 3.481, 3.522, 3.563, 3.604, 3.645,
+        3.686, 3.727]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/use_matplotlib_13_1.png" src="_images/use_matplotlib_13_1.png" />
+<img alt="_images/matplotlib_basic_13_1.png" src="_images/matplotlib_basic_13_1.png" />
 </div>
 </div>
-</section>
-<section id="id8">
-<h3>パラメータの調整<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">hist</span></code>関数にオプションで <code class="docutils literal notranslate"><span class="pre">bin=100</span></code> を渡すと、階級を <span class="math notranslate nohighlight">\(100\)</span> 個に分けることができます。</p>
+<section id="id4">
+<h3>パラメータの調整<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">hist</span></code>関数にオプションで <code class="docutils literal notranslate"><span class="pre">bins=100</span></code> を渡すと、階級を <span class="math notranslate nohighlight">\(100\)</span> 個に分けることができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -637,41 +601,45 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 2.,  0.,  1.,  0.,  0.,  0.,  1.,  2.,  1.,  2.,  2.,  0.,  2.,
-         1.,  2.,  3.,  6.,  8.,  6.,  4., 13.,  8.,  6.,  6., 10.,  7.,
-         9., 12., 11., 16., 20., 17., 23., 17., 25., 28., 21., 19., 25.,
-        26., 26., 21., 38., 38., 34., 28., 21., 26., 29., 23., 25., 31.,
-        33., 24., 25., 20., 22., 19., 17., 11., 13., 11., 16.,  7., 13.,
-         7.,  6.,  8., 10.,  4.,  3.,  4.,  3.,  1.,  3.,  3.,  5.,  1.,
-         1.,  2.,  1.,  0.,  1.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  1.,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.,  0.,  3.,
+         4.,  3.,  3.,  1.,  2.,  3., 10.,  7.,  4.,  7., 12., 12.,  5.,
+        14., 22., 14., 13., 22., 19., 19., 19., 17., 34., 22., 28., 24.,
+        25., 41., 26., 27., 33., 31., 38., 32., 22., 24., 31., 19., 31.,
+        25., 33., 18., 22., 14., 13.,  7., 15., 26.,  9., 19.,  9.,  5.,
+        10.,  6.,  8.,  4.,  5.,  2.,  4.,  3.,  4.,  2.,  0.,  1.,  3.,
+         3.,  1.,  1.,  0.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,
          0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  1.]),
- array([3.331  , 3.33485, 3.3387 , 3.34255, 3.3464 , 3.35025, 3.3541 ,
-        3.35795, 3.3618 , 3.36565, 3.3695 , 3.37335, 3.3772 , 3.38105,
-        3.3849 , 3.38875, 3.3926 , 3.39645, 3.4003 , 3.40415, 3.408  ,
-        3.41185, 3.4157 , 3.41955, 3.4234 , 3.42725, 3.4311 , 3.43495,
-        3.4388 , 3.44265, 3.4465 , 3.45035, 3.4542 , 3.45805, 3.4619 ,
-        3.46575, 3.4696 , 3.47345, 3.4773 , 3.48115, 3.485  , 3.48885,
-        3.4927 , 3.49655, 3.5004 , 3.50425, 3.5081 , 3.51195, 3.5158 ,
-        3.51965, 3.5235 , 3.52735, 3.5312 , 3.53505, 3.5389 , 3.54275,
-        3.5466 , 3.55045, 3.5543 , 3.55815, 3.562  , 3.56585, 3.5697 ,
-        3.57355, 3.5774 , 3.58125, 3.5851 , 3.58895, 3.5928 , 3.59665,
-        3.6005 , 3.60435, 3.6082 , 3.61205, 3.6159 , 3.61975, 3.6236 ,
-        3.62745, 3.6313 , 3.63515, 3.639  , 3.64285, 3.6467 , 3.65055,
-        3.6544 , 3.65825, 3.6621 , 3.66595, 3.6698 , 3.67365, 3.6775 ,
-        3.68135, 3.6852 , 3.68905, 3.6929 , 3.69675, 3.7006 , 3.70445,
-        3.7083 , 3.71215, 3.716  ]),
+ array([3.317 , 3.3211, 3.3252, 3.3293, 3.3334, 3.3375, 3.3416, 3.3457,
+        3.3498, 3.3539, 3.358 , 3.3621, 3.3662, 3.3703, 3.3744, 3.3785,
+        3.3826, 3.3867, 3.3908, 3.3949, 3.399 , 3.4031, 3.4072, 3.4113,
+        3.4154, 3.4195, 3.4236, 3.4277, 3.4318, 3.4359, 3.44  , 3.4441,
+        3.4482, 3.4523, 3.4564, 3.4605, 3.4646, 3.4687, 3.4728, 3.4769,
+        3.481 , 3.4851, 3.4892, 3.4933, 3.4974, 3.5015, 3.5056, 3.5097,
+        3.5138, 3.5179, 3.522 , 3.5261, 3.5302, 3.5343, 3.5384, 3.5425,
+        3.5466, 3.5507, 3.5548, 3.5589, 3.563 , 3.5671, 3.5712, 3.5753,
+        3.5794, 3.5835, 3.5876, 3.5917, 3.5958, 3.5999, 3.604 , 3.6081,
+        3.6122, 3.6163, 3.6204, 3.6245, 3.6286, 3.6327, 3.6368, 3.6409,
+        3.645 , 3.6491, 3.6532, 3.6573, 3.6614, 3.6655, 3.6696, 3.6737,
+        3.6778, 3.6819, 3.686 , 3.6901, 3.6942, 3.6983, 3.7024, 3.7065,
+        3.7106, 3.7147, 3.7188, 3.7229, 3.727 ]),
  &lt;BarContainer object of 100 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/use_matplotlib_15_1.png" src="_images/use_matplotlib_15_1.png" />
+<img alt="_images/matplotlib_basic_15_1.png" src="_images/matplotlib_basic_15_1.png" />
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>実は<strong>中心極限定理</strong>によって、この分布は正規分布に近づいていきます。</p>
+<p>実は<strong>中心極限定理</strong>によって、この分布は正規分布に近づいていくらしいです。（よくわかってない）</p>
 <p><a class="reference external" href="https://bellcurve.jp/statistics/course/8543.html">中心極限定理 - 統計WEB</a></p>
 </div>
 </section>
+</section>
+<section id="id5">
+<h2>参考<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html">Chainerチュートリアル</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -709,10 +677,10 @@ title="Print to PDF"
             <p class="prev-next-title">第11回 - Pythonによるデータ可視化入門</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html" title="next page">
+    <a class='right-next' id="next-link" href="matplotlib_advanced.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pythonの可視化ライブラリまとめ</p>
+        <p class="prev-next-title">Matplotlib（応用編）</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
