@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Matplotlib（応用編）" href="matplotlib_advanced.html" />
+    <link rel="prev" title="電場をプロット" href="matplotlib_epotential.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,6 +121,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="matplotlib_advanced.html">
    Matplotlib（応用編）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib_practice.html">
+   演習問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib_epotential.html">
+   電場をプロット
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -201,7 +211,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/kentakom1213/practice-datavisualization"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -218,7 +228,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvisualizers.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kentakom1213/practice-datavisualization/issues/new?title=Issue%20on%20page%20%2Fvisualizers.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -464,6 +474,12 @@ title="Print to PDF"
 <h3><a class="reference external" href="https://matplotlib.org/">matplotlib</a><a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h3>
 <p>一番メジャーなライブラリ、ほとんどのグラフはこのライブラリで描画することが可能です。<br />
 多機能であることも特徴の一つで、3Dプロットやアニメーションなどもサポートしています。</p>
+<figure class="align-default" id="id4">
+<img alt="_images/e_potential.png" src="_images/e_potential.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">matplotlibの例</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/yubais/items/c95ba9ff1b23dd33fde2">matplotlib でアニメーションを作る - Qiita</a></p></li>
 </ul>
@@ -471,10 +487,20 @@ title="Print to PDF"
 <section id="seaborn">
 <h3><a class="reference external" href="https://seaborn.pydata.org/">seaborn</a><a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h3>
 <p>matplotlibよりも少しのコードで、より洗練された図を書くことができます。</p>
+<figure class="align-default" id="id5">
+<img alt="_images/seaborn.png" src="_images/seaborn.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">seabornの例</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<div class="legend">
+<p><a class="reference external" href="https://seaborn.pydata.org/examples/scatterplot_matrix.html">seaborn</a>より引用</p>
+</div>
+</figcaption>
+</figure>
 </section>
 <section id="plotly">
 <h3><a class="reference external" href="https://plotly.com/python/">plotly</a><a class="headerlink" href="#plotly" title="Permalink to this headline">#</a></h3>
 <p>手で動かすことのできる（インタラクティブな）グラフをかけるのが特長です。</p>
+<p><a class="reference external" href="https://plotly.com/python/3d-axes/#:~:text=Range%20of%20axes,-3D%20figures%20have">こんなかんじ</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/inoory/items/12028af62018bf367722">[Python] Plotlyでぐりぐり動かせるグラフを作る - Qiita</a></p></li>
 </ul>
@@ -499,6 +525,7 @@ title="Print to PDF"
 <section id="geopandas">
 <h3><a class="reference external" href="https://geopandas.org/en/stable/">GeoPandas</a><a class="headerlink" href="#geopandas" title="Permalink to this headline">#</a></h3>
 <p>地理データをPandasっぽく扱えるのが売りらしいです。</p>
+<p><a class="reference external" href="https://qiita.com/c60evaporator/items/ac6a6d66a20520f129e6#:~:text=%E3%81%A8%E6%80%9D%E3%81%84%E3%81%BE%E3%81%99%E3%80%82-,GeoPandas%E3%81%A8%E3%81%AF,-GIS%EF%BC%88%E5%9C%B0%E7%90%86%E6%83%85%E5%A0%B1">こんなかんじ</a></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sorabatake.jp/20510/">GeoPandas入門</a></p></li>
 </ul>
@@ -517,6 +544,12 @@ title="Print to PDF"
 <h3><a class="reference external" href="https://graphviz.readthedocs.io/en/stable/manual.html">Graphviz</a><a class="headerlink" href="#graphviz" title="Permalink to this headline">#</a></h3>
 <p>こちらは、フローチャートチックなプロットができます。<br />
 オートマトンをいい感じに表示するのに向いてるかも！</p>
+<figure class="align-default" id="id6">
+<img alt="_images/Q1.png" src="_images/Q1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">graphvizの例</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><a class="reference external" href="https://programgenjin.hatenablog.com/entry/2019/02/26/075121">Python上でGraphvizを使って綺麗なグラフを描く</a></p></li>
 </ul>
@@ -551,11 +584,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="matplotlib_advanced.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="matplotlib_epotential.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Matplotlib（応用編）</p>
+            <p class="prev-next-title">電場をプロット</p>
         </div>
     </a>
 </div>
