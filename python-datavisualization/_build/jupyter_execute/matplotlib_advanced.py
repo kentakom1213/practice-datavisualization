@@ -3,7 +3,7 @@
 
 # # Matplotlib（応用編）
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kentakom1213/practice-datavisualization/blob/main/matplotlib_advanced.ipynb)
 # 
 # 実際のデータから、プロットをしてみよう！
 # 

@@ -6,5 +6,6 @@ root: intro
 chapters:
 - file: matplotlib_basic
 - file: matplotlib_advanced
+- file: matplotlib_practice
 - file: matplotlib_epotential
 - file: visualizers

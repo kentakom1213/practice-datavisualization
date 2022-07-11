@@ -3,7 +3,7 @@
 
 # # Matplotlib（基礎編）
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/kentakom1213/blob/main/matplotlib_basic.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kentakom1213/practice-datavisualization/blob/main/matplotlib_basic.ipynb)
 # 
 # まずは、[Chainerチュートリアル](https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html)通りプロット。
 # 簡単なグラフはこれで十分です。

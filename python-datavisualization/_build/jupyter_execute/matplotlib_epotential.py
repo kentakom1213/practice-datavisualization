@@ -3,7 +3,7 @@
 
 # # 電場をプロット
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kentakom1213/practice-datavisualization/blob/main/matplotlib_epotential.ipynb)
 # 
 # おまけです。こんなこともできるよーって感じ。
 
