@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: matplotlib_basic
 - file: matplotlib_advanced
-- file: Pythonの可視化ライブラリまとめ
+- file: matplotlib_epotential
+- file: visualizers

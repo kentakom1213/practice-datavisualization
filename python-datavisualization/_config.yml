@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Pythonによるデータ可視化入門
+title: データ可視化入門
 author: nu-zero-one-seminar
-# logo: zero-one.jpeg
+logo: line-chart-line.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

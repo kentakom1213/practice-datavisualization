@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>第11回 - Pythonによるデータ可視化入門 &#8212; データ可視化入門</title>
+    <title>Pythonの可視化ライブラリまとめ &#8212; データ可視化入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Matplotlib（基礎編）" href="matplotlib_basic.html" />
+    <link rel="prev" title="Matplotlib（応用編）" href="matplotlib_advanced.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,13 +106,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     第11回 - Pythonによるデータ可視化入門
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matplotlib_basic.html">
    Matplotlib（基礎編）
@@ -123,13 +123,8 @@ const thebe_selector_output = ".output, .cell_output"
    Matplotlib（応用編）
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="matplotlib_epotential.html">
-   電場をプロット
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="visualizers.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Pythonの可視化ライブラリまとめ
   </a>
  </li>
@@ -223,7 +218,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvisualizers.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -251,7 +246,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/visualizers.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -288,23 +283,172 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   汎用ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     seaborn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotly">
+     plotly
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#altair">
+     Altair
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bokeh">
+     Bokeh
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   地理情報可視化ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geopandas">
+     GeoPandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   ネットワーク可視化ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networkx">
+     networkX
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphviz">
+     Graphviz
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第11回 - Pythonによるデータ可視化入門</h1>
+                <h1>Pythonの可視化ライブラリまとめ</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   汎用ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     seaborn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotly">
+     plotly
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#altair">
+     Altair
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bokeh">
+     Bokeh
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   地理情報可視化ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geopandas">
+     GeoPandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   ネットワーク可視化ツール
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networkx">
+     networkX
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphviz">
+     Graphviz
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -313,22 +457,71 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>第11回 - Pythonによるデータ可視化入門<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
-<p>この講義では、Pythonとさまざまなライブラリを用いて、いろいろなデータを可視化する方法を学びます。</p>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="matplotlib_basic.html">Matplotlib（基礎編）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matplotlib_advanced.html">Matplotlib（応用編）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matplotlib_epotential.html">電場をプロット</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualizers.html">Pythonの可視化ライブラリまとめ</a></li>
-</ul>
-</div>
-<hr class="docutils" />
-<p><strong>リソース</strong></p>
+<h1>Pythonの可視化ライブラリまとめ<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>汎用ツール<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="matplotlib">
+<h3><a class="reference external" href="https://matplotlib.org/">matplotlib</a><a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h3>
+<p>一番メジャーなライブラリ、ほとんどのグラフはこのライブラリで描画することが可能です。<br />
+多機能であることも特徴の一つで、3Dプロットやアニメーションなどもサポートしています。</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html">12. Matplotlib入門 - ChainerTutorial</a></p></li>
+<li><p><a class="reference external" href="https://qiita.com/yubais/items/c95ba9ff1b23dd33fde2">matplotlib でアニメーションを作る - Qiita</a></p></li>
 </ul>
+</section>
+<section id="seaborn">
+<h3><a class="reference external" href="https://seaborn.pydata.org/">seaborn</a><a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h3>
+<p>matplotlibよりも少しのコードで、より洗練された図を書くことができます。</p>
+</section>
+<section id="plotly">
+<h3><a class="reference external" href="https://plotly.com/python/">plotly</a><a class="headerlink" href="#plotly" title="Permalink to this headline">#</a></h3>
+<p>手で動かすことのできる（インタラクティブな）グラフをかけるのが特長です。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://qiita.com/inoory/items/12028af62018bf367722">[Python] Plotlyでぐりぐり動かせるグラフを作る - Qiita</a></p></li>
+</ul>
+</section>
+<section id="altair">
+<h3><a class="reference external" href="https://altair-viz.github.io/">Altair</a><a class="headerlink" href="#altair" title="Permalink to this headline">#</a></h3>
+<p>こちらも、インタラクティブにデータを可視化できるライブラリです。<br />
+直接htmlなどにレンダリングして、ファイルとして送ったりできるのが売りみたい。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sakizo-blog.com/298/">可視化ライブラリAltairの便利な使い方</a></p></li>
+</ul>
+</section>
+<section id="bokeh">
+<h3><a class="reference external" href="http://docs.bokeh.org/en/latest/">Bokeh</a><a class="headerlink" href="#bokeh" title="Permalink to this headline">#</a></h3>
+<p>またまた、インタラクティブです。Pythonの可視化ライブラリは群雄割拠ですね。<br />
+これは使うのが多少簡単らしいです。</p>
+</section>
+</section>
+<section id="id2">
+<h2>地理情報可視化ツール<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>位置情報と紐付いたデータを地図上に表示するツールです。</p>
+<section id="geopandas">
+<h3><a class="reference external" href="https://geopandas.org/en/stable/">GeoPandas</a><a class="headerlink" href="#geopandas" title="Permalink to this headline">#</a></h3>
+<p>地理データをPandasっぽく扱えるのが売りらしいです。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sorabatake.jp/20510/">GeoPandas入門</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>ネットワーク可視化ツール<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>グラフ（グラフ理論の方）を可視化できるツールです。<br />
+グラフというとあまり馴染みがないかもしれませんが、たとえば、「SNSでユーザー同士がどう繋がっているのか」
+みたいな情報を表したものです。</p>
+<section id="networkx">
+<h3><a class="reference external" href="https://networkx.org/">networkX</a><a class="headerlink" href="#networkx" title="Permalink to this headline">#</a></h3>
+<p>可視化だけでなく、データ処理も行えるツールです。</p>
+</section>
+<section id="graphviz">
+<h3><a class="reference external" href="https://graphviz.readthedocs.io/en/stable/manual.html">Graphviz</a><a class="headerlink" href="#graphviz" title="Permalink to this headline">#</a></h3>
+<p>こちらは、フローチャートチックなプロットができます。<br />
+オートマトンをいい感じに表示するのに向いてるかも！</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://programgenjin.hatenablog.com/entry/2019/02/26/075121">Python上でGraphvizを使って綺麗なグラフを描く</a></p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -358,12 +551,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="matplotlib_basic.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Matplotlib（基礎編）</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+    <a class='left-prev' id="prev-link" href="matplotlib_advanced.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Matplotlib（応用編）</p>
+        </div>
     </a>
 </div>
             </footer>

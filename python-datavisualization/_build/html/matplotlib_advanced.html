@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Matplotlib（応用編） &#8212; Pythonによるデータ可視化入門</title>
+    <title>Matplotlib（応用編） &#8212; データ可視化入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pythonの可視化ライブラリまとめ" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html" />
+    <link rel="next" title="電場をプロット" href="matplotlib_epotential.html" />
     <link rel="prev" title="Matplotlib（基礎編）" href="matplotlib_basic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -90,9 +90,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Pythonによるデータ可視化入門</h1>
+      <img src="_static/line-chart-line.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">データ可視化入門</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -120,7 +125,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html">
+  <a class="reference internal" href="matplotlib_epotential.html">
+   電場をプロット
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualizers.html">
    Pythonの可視化ライブラリまとめ
   </a>
  </li>
@@ -303,6 +313,21 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
+   データの読み込み
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   図の作成
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   散布図のプロット
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
    参考
   </a>
  </li>
@@ -327,6 +352,21 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
+   データの読み込み
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   図の作成
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   散布図のプロット
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
    参考
   </a>
  </li>
@@ -343,13 +383,175 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <h1>Matplotlib（応用編）<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
 <p><span class="xref myst"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></span></p>
-<p>ここでは、<strong>オブジェクト指向</strong>インターフェースを用いて、より発展的なグラフィックを作成します。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>オブジェクト指向とは？</p>
+<p>実際のデータから、プロットをしてみよう！</p>
+<p>オブジェクト指向インターフェースを軽く使ってみます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
 </div>
 <section id="id1">
-<h2>参考<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>データの読み込み<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># colabでは不要</span>
+<span class="o">!</span>mkdir -p sample_data
+<span class="o">!</span>curl -o <span class="s2">&quot;sample_data/california_housing_train.csv&quot;</span> -sL https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;sample_data/california_housing_train.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-114.31</td>
+      <td>34.19</td>
+      <td>15.0</td>
+      <td>5612.0</td>
+      <td>1283.0</td>
+      <td>1015.0</td>
+      <td>472.0</td>
+      <td>1.4936</td>
+      <td>66900.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-114.47</td>
+      <td>34.40</td>
+      <td>19.0</td>
+      <td>7650.0</td>
+      <td>1901.0</td>
+      <td>1129.0</td>
+      <td>463.0</td>
+      <td>1.8200</td>
+      <td>80100.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-114.56</td>
+      <td>33.69</td>
+      <td>17.0</td>
+      <td>720.0</td>
+      <td>174.0</td>
+      <td>333.0</td>
+      <td>117.0</td>
+      <td>1.6509</td>
+      <td>85700.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-114.57</td>
+      <td>33.64</td>
+      <td>14.0</td>
+      <td>1501.0</td>
+      <td>337.0</td>
+      <td>515.0</td>
+      <td>226.0</td>
+      <td>3.1917</td>
+      <td>73400.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-114.57</td>
+      <td>33.57</td>
+      <td>20.0</td>
+      <td>1454.0</td>
+      <td>326.0</td>
+      <td>624.0</td>
+      <td>262.0</td>
+      <td>1.9250</td>
+      <td>65500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id2">
+<h2>図の作成<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_advanced_6_0.png" src="_images/matplotlib_advanced_6_0.png" />
+</div>
+</div>
+<p><strong>複数プロット</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>↑新しい図（figureオブジェクト）を作成する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>↑figを1行2列に分けて、<code class="docutils literal notranslate"><span class="pre">ax1</span></code>その1つ目（左側）に、<code class="docutils literal notranslate"><span class="pre">ax2</span></code>を2つ目（右側）に割り当てる。</p>
+</section>
+<section id="id3">
+<h2>散布図のプロット<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>左側の図（<code class="docutils literal notranslate"><span class="pre">ax1</span></code>）に散布図をプロットしてみます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_income&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_advanced_9_0.png" src="_images/matplotlib_advanced_9_0.png" />
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>参考<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9">早く知っておきたかったmatplotlibの基礎知識、あるいは見た目の調整が捗るArtistの話 - Qiita</a></p></li>
 <li><p><a class="reference external" href="https://bicycle1885.hatenablog.com/entry/2014/02/14/023734">matplotlib入門 - りんごがでている</a></p></li>
@@ -391,10 +593,10 @@ title="Print to PDF"
             <p class="prev-next-title">Matplotlib（基礎編）</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Python%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%BE%E3%81%A8%E3%82%81.html" title="next page">
+    <a class='right-next' id="next-link" href="matplotlib_epotential.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pythonの可視化ライブラリまとめ</p>
+        <p class="prev-next-title">電場をプロット</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

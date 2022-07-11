@@ -2,11 +2,13 @@
 
 この講義では、Pythonとさまざまなライブラリを用いて、いろいろなデータを可視化する方法を学びます。
 
-**リソース**
-
-- [12. Matplotlib入門 - ChainerTutorial](https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html)
-
 ---
 
 ```{tableofcontents}
 ```
+
+---
+
+**リソース**
+
+- [12. Matplotlib入門 - ChainerTutorial](https://tutorials.chainer.org/ja/12_Introduction_to_Matplotlib.html)
