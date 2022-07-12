@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="_static/line-chart-line-white.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Matplotlib（応用編）" href="matplotlib_advanced.html" />
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/line-chart-line.svg" class="logo" alt="logo">
+      <img src="_static/line-chart-line-white.svg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">データ可視化入門</h1>
@@ -536,7 +537,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1197e3e50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10f6fbe50&gt;
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_7_1.png" src="_images/matplotlib_basic_7_1.png" />
@@ -557,7 +558,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119926aa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f83ea40&gt;]
 </pre></div>
 </div>
 <img alt="_images/matplotlib_basic_9_1.png" src="_images/matplotlib_basic_9_1.png" />
@@ -591,7 +592,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.508, 3.386, 3.479, 3.383, 3.448, 3.502, 3.417, 3.376, 3.536, 3.553]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.558, 3.477, 3.442, 3.517, 3.477, 3.541, 3.454, 3.475, 3.526, 3.423]
 </pre></div>
 </div>
 </div>
@@ -607,9 +608,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  4.,  22.,  66., 158., 222., 228., 172.,  86.,  34.,   8.]),
- array([3.334 , 3.3666, 3.3992, 3.4318, 3.4644, 3.497 , 3.5296, 3.5622,
-        3.5948, 3.6274, 3.66  ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  5.,   9.,  32., 104., 201., 259., 215., 138.,  32.,   5.]),
+ array([3.301 , 3.3371, 3.3732, 3.4093, 3.4454, 3.4815, 3.5176, 3.5537,
+        3.5898, 3.6259, 3.662 ]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -626,29 +627,29 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  0.,  1.,  2.,  0.,  0.,  0.,  1.,  1.,  2.,
-         1.,  0.,  6.,  1.,  5.,  4.,  1.,  5.,  6., 11.,  4.,  5.,  4.,
-         7.,  5.,  9., 10., 23.,  8., 12., 17., 17.,  8.,  8., 22., 19.,
-        24., 18., 15., 31., 23., 20., 22., 35., 13., 20., 25., 29., 25.,
-        24., 25., 24., 19., 24., 25., 23., 10., 23., 26.,  8., 20., 19.,
-        19.,  7., 14., 18., 18., 14., 14.,  6., 10., 12.,  3.,  7.,  7.,
-         6.,  7.,  3.,  5.,  5.,  5.,  1.,  2.,  3.,  3.,  5.,  2.,  0.,
-         1.,  0.,  0.,  0.,  4.,  1.,  0.,  1.,  1.]),
- array([3.334  , 3.33726, 3.34052, 3.34378, 3.34704, 3.3503 , 3.35356,
-        3.35682, 3.36008, 3.36334, 3.3666 , 3.36986, 3.37312, 3.37638,
-        3.37964, 3.3829 , 3.38616, 3.38942, 3.39268, 3.39594, 3.3992 ,
-        3.40246, 3.40572, 3.40898, 3.41224, 3.4155 , 3.41876, 3.42202,
-        3.42528, 3.42854, 3.4318 , 3.43506, 3.43832, 3.44158, 3.44484,
-        3.4481 , 3.45136, 3.45462, 3.45788, 3.46114, 3.4644 , 3.46766,
-        3.47092, 3.47418, 3.47744, 3.4807 , 3.48396, 3.48722, 3.49048,
-        3.49374, 3.497  , 3.50026, 3.50352, 3.50678, 3.51004, 3.5133 ,
-        3.51656, 3.51982, 3.52308, 3.52634, 3.5296 , 3.53286, 3.53612,
-        3.53938, 3.54264, 3.5459 , 3.54916, 3.55242, 3.55568, 3.55894,
-        3.5622 , 3.56546, 3.56872, 3.57198, 3.57524, 3.5785 , 3.58176,
-        3.58502, 3.58828, 3.59154, 3.5948 , 3.59806, 3.60132, 3.60458,
-        3.60784, 3.6111 , 3.61436, 3.61762, 3.62088, 3.62414, 3.6274 ,
-        3.63066, 3.63392, 3.63718, 3.64044, 3.6437 , 3.64696, 3.65022,
-        3.65348, 3.65674, 3.66   ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  0.,  0.,  0.,  1.,  0.,  1.,  1.,  1.,  0.,  0.,  0.,  1.,
+         2.,  0.,  0.,  0.,  2.,  2.,  2.,  0.,  1.,  2.,  3.,  2.,  4.,
+         2.,  4.,  7.,  7.,  8., 14.,  9., 11., 11.,  4.,  9., 14.,  9.,
+        15., 10., 11., 18., 18., 27., 31., 15., 21., 28., 22., 35., 23.,
+        30., 15., 28., 27., 21., 30., 22., 28., 24., 24., 22., 28., 25.,
+        22., 20., 23., 15., 12., 24., 17., 23., 14.,  8., 16.,  7., 12.,
+        11.,  6., 10.,  2.,  7.,  3.,  1.,  2.,  5.,  0.,  1.,  1.,  0.,
+         2.,  1.,  1.,  0.,  0.,  0.,  0.,  0.,  1.]),
+ array([3.301  , 3.30461, 3.30822, 3.31183, 3.31544, 3.31905, 3.32266,
+        3.32627, 3.32988, 3.33349, 3.3371 , 3.34071, 3.34432, 3.34793,
+        3.35154, 3.35515, 3.35876, 3.36237, 3.36598, 3.36959, 3.3732 ,
+        3.37681, 3.38042, 3.38403, 3.38764, 3.39125, 3.39486, 3.39847,
+        3.40208, 3.40569, 3.4093 , 3.41291, 3.41652, 3.42013, 3.42374,
+        3.42735, 3.43096, 3.43457, 3.43818, 3.44179, 3.4454 , 3.44901,
+        3.45262, 3.45623, 3.45984, 3.46345, 3.46706, 3.47067, 3.47428,
+        3.47789, 3.4815 , 3.48511, 3.48872, 3.49233, 3.49594, 3.49955,
+        3.50316, 3.50677, 3.51038, 3.51399, 3.5176 , 3.52121, 3.52482,
+        3.52843, 3.53204, 3.53565, 3.53926, 3.54287, 3.54648, 3.55009,
+        3.5537 , 3.55731, 3.56092, 3.56453, 3.56814, 3.57175, 3.57536,
+        3.57897, 3.58258, 3.58619, 3.5898 , 3.59341, 3.59702, 3.60063,
+        3.60424, 3.60785, 3.61146, 3.61507, 3.61868, 3.62229, 3.6259 ,
+        3.62951, 3.63312, 3.63673, 3.64034, 3.64395, 3.64756, 3.65117,
+        3.65478, 3.65839, 3.662  ]),
  &lt;BarContainer object of 100 artists&gt;)
 </pre></div>
 </div>
@@ -707,9 +708,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90%:  [1, 1, 0, 13, 1, 40, 12, 14, 5, 10, 7, 10, 2, 6, 10, 0, 9, 7, 0, 9]
-60%:  [0, 0, 0, 3, 1, 2, 3, 0, 1, 1, 3, 0, 6, 3, 2, 2, 2, 3, 7, 2]
-30%:  [0, 2, 0, 1, 0, 3, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 0, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90%:  [0, 3, 12, 10, 18, 10, 3, 0, 0, 1, 2, 13, 16, 13, 0, 26, 0, 3, 28, 6]
+60%:  [0, 2, 0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 3, 0, 1, 0, 0, 0, 5, 0]
+30%:  [1, 0, 1, 1, 4, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
 </pre></div>
 </div>
 </div>
@@ -721,27 +722,27 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x119b57550&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b57820&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b78940&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b78c40&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b79d20&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b79ff0&gt;],
- &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x119b57af0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b57dc0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b78f10&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b791e0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b7a2c0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b7a590&gt;],
- &#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x119b57280&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b78670&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b79a50&gt;],
- &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x119b780d0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b794b0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b7a860&gt;],
- &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x119b783a0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b79780&gt;,
-  &lt;matplotlib.lines.Line2D at 0x119b7ab30&gt;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x10fa88730&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa88a00&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa89ae0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa89db0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8ae90&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8b160&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x10fa88cd0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa88fa0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8a080&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8a350&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8b430&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8b700&gt;],
+ &#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x10fa88460&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa89810&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8abc0&gt;],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x10fa89270&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8a620&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8b9d0&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x10fa89540&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8a8f0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x10fa8bca0&gt;],
  &#39;means&#39;: []}
 </pre></div>
 </div>
@@ -807,7 +808,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By nu-zero-one-seminar<br/>
+    By powell<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

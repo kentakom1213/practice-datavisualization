@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/line-chart-line-white.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="演習問題" href="matplotlib_practice.html" />
@@ -94,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/line-chart-line.svg" class="logo" alt="logo">
+      <img src="_static/line-chart-line-white.svg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">データ可視化入門</h1>
@@ -190,6 +191,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/kentakom1213/practice-datavisualization/main?urlpath=tree/docs/matplotlib_advanced.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -336,10 +366,15 @@ title="Print to PDF"
      箱ひげ図のプロット
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     タイトルの設定
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    参考
   </a>
  </li>
@@ -382,10 +417,15 @@ title="Print to PDF"
      箱ひげ図のプロット
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     タイトルの設定
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    参考
   </a>
  </li>
@@ -412,6 +452,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 日本語対応</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans-serif&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hiragino Maru Gothic Pro&#39;</span><span class="p">,</span> <span class="s1">&#39;Yu Gothic&#39;</span><span class="p">,</span> <span class="s1">&#39;Meirio&#39;</span><span class="p">,</span> <span class="s1">&#39;Takao&#39;</span><span class="p">,</span> <span class="s1">&#39;IPAexGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;IPAPGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;VL PGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;Noto Sans CJK JP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="id1">
 <h2>データの読み込み<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
@@ -427,104 +477,27 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;sample_data/california_housing_train.csv&#39;</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   longitude  latitude  housing_median_age  total_rooms  total_bedrooms  \
+0    -114.31     34.19                15.0       5612.0          1283.0   
+1    -114.47     34.40                19.0       7650.0          1901.0   
+2    -114.56     33.69                17.0        720.0           174.0   
+3    -114.57     33.64                14.0       1501.0           337.0   
+4    -114.57     33.57                20.0       1454.0           326.0   
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>housing_median_age</th>
-      <th>total_rooms</th>
-      <th>total_bedrooms</th>
-      <th>population</th>
-      <th>households</th>
-      <th>median_income</th>
-      <th>median_house_value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>-114.31</td>
-      <td>34.19</td>
-      <td>15.0</td>
-      <td>5612.0</td>
-      <td>1283.0</td>
-      <td>1015.0</td>
-      <td>472.0</td>
-      <td>1.4936</td>
-      <td>66900.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>-114.47</td>
-      <td>34.40</td>
-      <td>19.0</td>
-      <td>7650.0</td>
-      <td>1901.0</td>
-      <td>1129.0</td>
-      <td>463.0</td>
-      <td>1.8200</td>
-      <td>80100.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>-114.56</td>
-      <td>33.69</td>
-      <td>17.0</td>
-      <td>720.0</td>
-      <td>174.0</td>
-      <td>333.0</td>
-      <td>117.0</td>
-      <td>1.6509</td>
-      <td>85700.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>-114.57</td>
-      <td>33.64</td>
-      <td>14.0</td>
-      <td>1501.0</td>
-      <td>337.0</td>
-      <td>515.0</td>
-      <td>226.0</td>
-      <td>3.1917</td>
-      <td>73400.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>-114.57</td>
-      <td>33.57</td>
-      <td>20.0</td>
-      <td>1454.0</td>
-      <td>326.0</td>
-      <td>624.0</td>
-      <td>262.0</td>
-      <td>1.9250</td>
-      <td>65500.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+   population  households  median_income  median_house_value  
+0      1015.0       472.0         1.4936             66900.0  
+1      1129.0       463.0         1.8200             80100.0  
+2       333.0       117.0         1.6509             85700.0  
+3       515.0       226.0         3.1917             73400.0  
+4       624.0       262.0         1.9250             65500.0  
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id2">
@@ -539,7 +512,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_advanced_6_0.png" src="_images/matplotlib_advanced_6_0.png" />
+<img alt="_images/matplotlib_advanced_7_0.png" src="_images/matplotlib_advanced_7_0.png" />
 </div>
 </div>
 <p><strong>複数プロット</strong></p>
@@ -574,7 +547,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_advanced_9_0.png" src="_images/matplotlib_advanced_9_0.png" />
+<img alt="_images/matplotlib_advanced_10_0.png" src="_images/matplotlib_advanced_10_0.png" />
 </div>
 </div>
 <section id="id4">
@@ -586,7 +559,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;median house value&quot;</span><span class="p">])</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;House Value&quot;</span><span class="p">)</span>
 
@@ -595,17 +568,34 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matplotlib_advanced_11_0.png" src="_images/matplotlib_advanced_11_0.png" />
+<img alt="_images/matplotlib_advanced_12_0.png" src="_images/matplotlib_advanced_12_0.png" />
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>タイトルの設定<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>最後にタイトルをつけてみましょう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;所得と家賃の関係&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># figの上にタイトルを設定</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib_advanced_14_0.png" src="_images/matplotlib_advanced_14_0.png" />
 </div>
 </div>
 <p>割といい感じの図ができたんじゃないでしょうか？？</p>
 </section>
 </section>
-<section id="id5">
-<h2>参考<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h2>参考<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9">早く知っておきたかったmatplotlibの基礎知識、あるいは見た目の調整が捗るArtistの話 - Qiita</a></p></li>
 <li><p><a class="reference external" href="https://bicycle1885.hatenablog.com/entry/2014/02/14/023734">matplotlib入門 - りんごがでている</a></p></li>
+<li><p><a class="reference external" href="https://qiita.com/yniji/items/3fac25c2ffa316990d0c">matplotlibで日本語 - Qiita</a></p></li>
 </ul>
 </section>
 </section>
@@ -658,7 +648,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By nu-zero-one-seminar<br/>
+    By powell<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
