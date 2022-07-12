@@ -14,6 +14,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.gridspec import GridSpec
 
 
 # In[2]:
@@ -72,6 +73,9 @@ class EField:
 # In[3]:
 
 
+from matplotlib import gridspec
+
+
 x, y = (-1, 1), (-1, 1)
 f = EField(x=x, y=y)
 f.add_charge((0.5, 0.), 1.0)
@@ -81,9 +85,17 @@ f.add_charge((0., 1.0), 1)
 
 # make Figure
 fig = plt.figure(figsize=(10, 9))
-ax1 = plt.subplot2grid((2, 2), (1, 0), colspan=2, projection='3d', xlabel="x", ylabel="y")
-ax2 = plt.subplot2grid((2, 2), (0, 1), xlabel="x", ylabel="y")
-ax3 = plt.subplot2grid((2, 2), (0, 0), xlabel="x", ylabel="y")
+
+# grid の設定
+gs = GridSpec(2, 2)
+grid1 = gs.new_subplotspec((1, 0), colspan=2)
+grid2 = gs.new_subplotspec((0, 0))
+grid3 = gs.new_subplotspec((0, 1))
+
+# axesの作成
+ax1 = fig.add_subplot(grid1, projection="3d")
+ax2 = fig.add_subplot(grid2)
+ax3 = fig.add_subplot(grid3)
 
 # norm
 norm = mpl.colors.TwoSlopeNorm(vcenter=0.0)
