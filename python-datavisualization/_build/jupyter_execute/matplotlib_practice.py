@@ -11,5 +11,34 @@
 # In[1]:
 
 
+import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
+
+
+# In[2]:
+
+
+df = pd.read_csv('sample_data/california_housing_train.csv')
+
+print(df.head(5))
+
+
+# In[3]:
+
+
+fig = plt.figure(figsize=(12, 10))
+
+ax1 = fig.add_subplot(2, 2, 1)
+ax2 = fig.add_subplot(2, 2, 2)
+ax3 = fig.add_subplot(2, 2, 3)
+ax4 = fig.add_subplot(2, 2, 4)
+
+# ax1 (左上)
+
+# ax2 (右上)
+
+# ax3 (左下)
+
+# ax4 (右下)
 
