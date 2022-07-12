@@ -16,9 +16,18 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
+# In[2]:
+
+
+# 日本語対応
+from matplotlib import rcParams
+rcParams['font.family'] = 'sans-serif'
+rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio', 'Takao', 'IPAexGothic', 'IPAPGothic', 'VL PGothic', 'Noto Sans CJK JP']
+
+
 # ## データの読み込み
 
-# In[2]:
+# In[3]:
 
 
 # colabでは不要
@@ -26,17 +35,17 @@ get_ipython().system('mkdir -p sample_data')
 get_ipython().system('curl -o "sample_data/california_housing_train.csv" -sL https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv')
 
 
-# In[3]:
+# In[4]:
 
 
 df = pd.read_csv('sample_data/california_housing_train.csv')
 
-df.head(5)
+print(df.head(5))
 
 
 # ## 図の作成
 
-# In[4]:
+# In[5]:
 
 
 fig = plt.figure(figsize=(16, 8))
@@ -68,7 +77,7 @@ ax2 = fig.add_subplot(1, 2, 2)
 # - 横軸：所得の中央値
 # - 縦軸：家賃の中央値
 
-# In[5]:
+# In[6]:
 
 
 ax1.scatter(df['median_income'], df['median_house_value'], c="tab:blue")
@@ -87,12 +96,24 @@ fig
 # **データ**
 # - 家賃の中央値
 
-# In[6]:
+# In[7]:
 
 
-ax2.boxplot(df['median_house_value'])
+ax2.boxplot(df['median_house_value'], labels=["median house value"])
 
 ax2.set_title("House Value")
+
+fig
+
+
+# ### タイトルの設定
+# 
+# 最後にタイトルをつけてみましょう。
+
+# In[8]:
+
+
+fig.suptitle("所得と家賃の関係", fontsize=20)  # figの上にタイトルを設定
 
 fig
 
@@ -103,3 +124,4 @@ fig
 # 
 # - [早く知っておきたかったmatplotlibの基礎知識、あるいは見た目の調整が捗るArtistの話 - Qiita](https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9)
 # - [matplotlib入門 - りんごがでている](https://bicycle1885.hatenablog.com/entry/2014/02/14/023734)
+# - [matplotlibで日本語 - Qiita](https://qiita.com/yniji/items/3fac25c2ffa316990d0c)

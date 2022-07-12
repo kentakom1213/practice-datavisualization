@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: データ可視化入門
-author: nu-zero-one-seminar
-logo: images/line-chart-line.svg
+author: powell
+logo: images/line-chart-line-white.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -28,5 +28,6 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon: images/line-chart-line-white.svg
   use_issues_button: true
   use_repository_button: true
