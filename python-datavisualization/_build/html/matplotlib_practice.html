@@ -324,12 +324,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   課題
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   解答
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -341,6 +370,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   課題
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   解答
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -357,6 +404,16 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 日本語対応</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans-serif&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hiragino Maru Gothic Pro&#39;</span><span class="p">,</span> <span class="s1">&#39;Yu Gothic&#39;</span><span class="p">,</span> <span class="s1">&#39;Meirio&#39;</span><span class="p">,</span> <span class="s1">&#39;Takao&#39;</span><span class="p">,</span> <span class="s1">&#39;IPAexGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;IPAPGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;VL PGothic&#39;</span><span class="p">,</span> <span class="s1">&#39;Noto Sans CJK JP&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -389,7 +446,142 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># カリフォルニアの気象データ</span>
+<span class="c1"># ソース: https://www.data.jma.go.jp/cpd/monitor/climatview/graph_mkhtml_nrm.php?n=72494&amp;m=1</span>
+
+<span class="c1"># california_temp = pd.read_csv(&#39;sample_data/climat_72494_nrm.csv&#39;)</span>
+
+<span class="n">california_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+        <span class="s2">&quot;average_temperature&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.7</span><span class="p">,</span> <span class="mf">11.8</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">13.9</span><span class="p">,</span> <span class="mf">15.4</span><span class="p">,</span> <span class="mf">16.9</span><span class="p">,</span> <span class="mf">17.7</span><span class="p">,</span> <span class="mf">18.2</span><span class="p">,</span> <span class="mf">18.2</span><span class="p">,</span> <span class="mf">16.9</span><span class="p">,</span> <span class="mf">13.4</span><span class="p">,</span> <span class="mf">10.7</span><span class="p">],</span>
+        <span class="s2">&quot;precipitation_amount&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">98.8</span><span class="p">,</span> <span class="mf">100.2</span><span class="p">,</span> <span class="mf">69.4</span><span class="p">,</span> <span class="mf">35.2</span><span class="p">,</span> <span class="mf">13.3</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">50.3</span><span class="p">,</span> <span class="mf">105.9</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">california_temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>average_temperature</th>
+      <th>precipitation_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>10.7</td>
+      <td>98.8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>11.8</td>
+      <td>100.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>13.0</td>
+      <td>69.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>13.9</td>
+      <td>35.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>15.4</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>16.9</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>17.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>18.2</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>18.2</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>16.9</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>13.4</td>
+      <td>50.3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>10.7</td>
+      <td>105.9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="id2">
+<h2>課題<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>左上に<code class="docutils literal notranslate"><span class="pre">df['total_rooms']</span></code>と<code class="docutils literal notranslate"><span class="pre">df['total_bedrooms']</span></code>の箱ひげ図をプロット</p></li>
+<li><p>右上に<code class="docutils literal notranslate"><span class="pre">df['total_rooms']</span></code>と<code class="docutils literal notranslate"><span class="pre">df['total_bedrooms']</span></code>のヒストグラムを重ねてプロット</p></li>
+<li><p>左下にカリフォルニアの雨温図をプロット（横軸:月, 縦軸:気温、降水量の折れ線グラフ）</p></li>
+<li><p>右下にカリフォルニアのハイサーグラフをプロット（(x, y) = (気温, 降水量)のグラフ）</p></li>
+</ol>
+<p>↓こんな感じ</p>
+<figure class="align-default">
+<img alt="_images/california_stats.png" src="_images/california_stats.png" />
+</figure>
+</section>
+<section id="id3">
+<h2>解答<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<details><summary>解答</summary>
+<div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -397,19 +589,33 @@ title="Print to PDF"
 <span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># ax1 (左上)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">boxplot</span><span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_bedrooms&#39;</span><span class="p">]),</span> <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;total_bedrooms&#39;</span><span class="p">))</span>
 
 <span class="c1"># ax2 (右上)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_bedrooms&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;total_bedrooms&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
 <span class="c1"># ax3 (左下)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">],</span> <span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;average_temperature&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">],</span> <span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;precipitation_amount&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;precipitation&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
 <span class="c1"># ax4 (右下)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;average_temperature&#39;</span><span class="p">],</span> <span class="n">california_temp</span><span class="p">[</span><span class="s1">&#39;precipitation_amount&#39;</span><span class="p">])</span>
+
+<span class="c1">#### タイトル</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;カリフォルニアの各種統計&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;total_rooms and total_bedrooms&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;total_rooms and total_bedrooms&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;temperature and precippitation&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;hythergraph of california&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;python-datavisualization/images/california_stats.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/matplotlib_practice_3_0.png" src="_images/matplotlib_practice_3_0.png" />
-</div>
-</div>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
