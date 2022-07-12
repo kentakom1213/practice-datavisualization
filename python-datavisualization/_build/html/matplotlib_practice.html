@@ -566,16 +566,69 @@ title="Print to PDF"
 </div>
 <section id="id2">
 <h2>課題<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>穴埋めで、下の図を完成させよう。</p>
 <ol class="simple">
 <li><p>左上に<code class="docutils literal notranslate"><span class="pre">df['total_rooms']</span></code>と<code class="docutils literal notranslate"><span class="pre">df['total_bedrooms']</span></code>の箱ひげ図をプロット</p></li>
-<li><p>右上に<code class="docutils literal notranslate"><span class="pre">df['total_rooms']</span></code>と<code class="docutils literal notranslate"><span class="pre">df['total_bedrooms']</span></code>のヒストグラムを重ねてプロット</p></li>
-<li><p>左下にカリフォルニアの雨温図をプロット（横軸:月, 縦軸:気温、降水量の折れ線グラフ）</p></li>
-<li><p>右下にカリフォルニアのハイサーグラフをプロット（(x, y) = (気温, 降水量)のグラフ）</p></li>
+<li><p>右上に<code class="docutils literal notranslate"><span class="pre">df['total_rooms']</span></code>と<code class="docutils literal notranslate"><span class="pre">df['total_bedrooms']</span></code>のヒストグラムを重ねてプロット<br />
+<code class="docutils literal notranslate"><span class="pre">bins=100</span></code>を指定すること</p></li>
+<li><p>左下にカリフォルニアの雨温図をプロット<br />
+（横軸:月, 縦軸:気温、降水量の折れ線グラフ）</p></li>
+<li><p>右下にカリフォルニアのハイサーグラフをプロット<br />
+（(x, y) = (気温, 降水量)のグラフ）</p></li>
 </ol>
 <p>↓こんな感じ</p>
 <figure class="align-default">
 <img alt="_images/california_stats.png" src="_images/california_stats.png" />
 </figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 問題 ###</span>
+<span class="c1"># ... に当てはまるコードを入れてね</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">ax4</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># ax1 (左上)</span>
+<span class="n">ax1</span><span class="o">.</span> <span class="o">...</span>
+
+<span class="c1"># ax2 (右上)</span>
+<span class="n">ax2</span><span class="o">.</span> <span class="o">...</span>  <span class="c1"># label=&#39;total_rooms&#39;</span>
+<span class="n">ax2</span><span class="o">.</span> <span class="o">...</span>  <span class="c1"># label=&#39;total_bedrooms&#39;</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1"># ax3 (左下)</span>
+<span class="n">ax3</span><span class="o">.</span> <span class="o">...</span> <span class="c1"># label=&#39;temperature&#39;</span>
+<span class="n">ax3</span><span class="o">.</span> <span class="o">...</span> <span class="c1"># label=&#39;precipitation&#39;</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1"># ax4 (右下)</span>
+<span class="n">ax4</span><span class="o">.</span> <span class="o">...</span>
+
+<span class="c1">#### タイトル</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;カリフォルニアの各種統計&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;total_rooms and total_bedrooms&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;total_rooms and total_bedrooms&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;temperature and precippitation&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;hythergraph of california&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">ax1</span><span class="o">.</span> <span class="o">...</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id3">
 <h2>解答<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
@@ -612,7 +665,7 @@ title="Print to PDF"
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;temperature and precippitation&#39;</span><span class="p">)</span>
 <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;hythergraph of california&#39;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;python-datavisualization/images/california_stats.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div></section>

@@ -54,15 +54,60 @@ california_temp
 
 # ## 課題
 # 
+# 穴埋めで、下の図を完成させよう。
+# 
 # 1. 左上に`df['total_rooms']`と`df['total_bedrooms']`の箱ひげ図をプロット
-# 2. 右上に`df['total_rooms']`と`df['total_bedrooms']`のヒストグラムを重ねてプロット
-# 3. 左下にカリフォルニアの雨温図をプロット（横軸:月, 縦軸:気温、降水量の折れ線グラフ）
-# 4. 右下にカリフォルニアのハイサーグラフをプロット（(x, y) = (気温, 降水量)のグラフ）
+# 2. 右上に`df['total_rooms']`と`df['total_bedrooms']`のヒストグラムを重ねてプロット  
+#    `bins=100`を指定すること
+# 3. 左下にカリフォルニアの雨温図をプロット  
+#    （横軸:月, 縦軸:気温、降水量の折れ線グラフ）
+# 4. 右下にカリフォルニアのハイサーグラフをプロット  
+#    （(x, y) = (気温, 降水量)のグラフ）
 # 
 # ↓こんな感じ
 # 
 # ```{figure} images/california_stats.png
 # ```
+
+# In[5]:
+
+
+### 問題 ###
+# ... に当てはまるコードを入れてね
+
+fig = plt.figure(figsize=(12, 10), dpi=100)
+
+ax1 = ...
+ax2 = ...
+ax3 = ...
+ax4 = ...
+
+# ax1 (左上)
+ax1. ...
+
+# ax2 (右上)
+ax2. ...  # label='total_rooms'
+ax2. ...  # label='total_bedrooms'
+ax2.legend(loc='upper right')
+
+# ax3 (左下)
+ax3. ... # label='temperature'
+ax3. ... # label='precipitation'
+ax3.legend(loc='upper right')
+
+# ax4 (右下)
+ax4. ...
+
+#### タイトル
+fig.suptitle('カリフォルニアの各種統計', fontsize=20)
+
+ax1.set_title('total_rooms and total_bedrooms')
+ax2.set_title('total_rooms and total_bedrooms')
+ax3.set_title('temperature and precippitation')
+ax4.set_title('hythergraph of california')
+
+plt.show()
+
 
 # ## 解答
 # 
@@ -101,7 +146,7 @@ california_temp
 # ax3.set_title('temperature and precippitation')
 # ax4.set_title('hythergraph of california')
 # 
-# fig.savefig('python-datavisualization/images/california_stats.png')
+# plt.show()
 # ```
 # 
 # </div>
